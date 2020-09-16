@@ -8,7 +8,9 @@ set -e
 git config --global user.email "wittkuhn@mpib-berlin.mpg.de"
 git config --global user.name "Lennart Wittkuhn"
 
-git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+git clone -b \
+  gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git \
+  book-output
 cd book-output
 cp -r ../_book/* ./
 git add --all *
