@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>test</title>
+  <title>Chapter 2 Nested subdataset | test</title>
   <meta name="description" content="Experiments with DataLad, R bookdown and Travis CI" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="test" />
+  <meta property="og:title" content="Chapter 2 Nested subdataset | test" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="lnnrtwttkhn/bookdown-playground" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="test" />
+  <meta name="twitter:title" content="Chapter 2 Nested subdataset | test" />
   
   <meta name="twitter:description" content="Experiments with DataLad, R bookdown and Travis CI" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="index.html"/>
 
-<link rel="next" href="nested-subdataset.html"/>
 <script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -154,17 +154,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">test</h1>
-<p class="author"><em>Lennart Wittkuhn</em></p>
-<p class="date"><em>9/16/2020</em></p>
-</div>
-<div id="bookdown-playground" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Bookdown Playground</h1>
-<p>Welcome to my Bookdown Playground!</p>
-<div id="index.rmd" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> <code>index.Rmd</code></h2>
-<p>This is the content of the <code>index.Rmd</code> file in the root of the repo.</p>
+<div id="nested-subdataset" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Nested subdataset</h1>
+<div id="test.rmd" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> <code>test.Rmd</code></h2>
+<p>This is the content of the <code>subdataset/test.Rmd</code> file in the root of the <code>/subdataset</code> repo (which is the same repo but just nested as a DataLad subdataset, aka. <code>git submodule</code>).</p>
+<p>According to <a href="https://docs.travis-ci.com/user/customizing-the-build/#git-submodules">this Travis CI documentation</a> …</p>
+<blockquote>
+<p>Travis CI clones Git submodules by default</p>
+</blockquote>
+<p>Importantly, the subdataset needs to be added using <code>https</code> and not <code>ssh</code>, i.e., I used:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="nested-subdataset.html#cb1-1"></a><span class="ex">datalad</span> clone --dataset . https://github.com/lnnrtwttkhn/bookdown-playground-subdataset.git subdataset</span></code></pre></div>
+<p><strong>Edit</strong> Actually, in this I create the subdataset locally first using <code>datalad create -d . -c text2git subdataset</code> and then added the GitHub remote <code>origin</code> afterwards using <code>datalad siblings add -s origin --url https://github.com/lnnrtwttkhn/bookdown-playground-subdataset.git</code>.</p>
 
 </div>
 </div>
@@ -173,8 +174,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="nested-subdataset.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
