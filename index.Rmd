@@ -7,8 +7,8 @@ output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 link-citations: yes
-#github-repo: rstudio/bookdown-demo
-description: "tba"
+github-repo: lnnrtwttkhn/bookdown-playground
+description: "Experiments with DataLad, R bookdown and Travis CI"
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
