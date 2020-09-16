@@ -38,12 +38,15 @@ output:
       code_folding: "hide"
 
 ---
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Bookdown Playground
 
-## Overview
-
 Welcome to my Bookdown Playground!
+
+## `index.Rmd`
+
+This is the content of the `index.Rmd` file in the root of the repo.
+
