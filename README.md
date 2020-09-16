@@ -1,3 +1,7 @@
+# Bookdown Playground
+
+[![Build Status](https://travis-ci.com/lnnrtwttkhn/bookdown-playground.svg?branch=master)](https://travis-ci.com/lnnrtwttkhn/bookdown-playground)
+
 ## About
 
 In this repo I experiment with [DataLad](https://www.datalad.org/), [R Bookdown](https://bookdown.org/yihui/bookdown/), and [Travis CI](https://travis-ci.com/).
