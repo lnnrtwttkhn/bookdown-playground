@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>test</title>
+  <title>Bookdown Playground</title>
   <meta name="description" content="Experiments with DataLad, R bookdown and Travis CI" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="test" />
+  <meta property="og:title" content="Bookdown Playground" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="lnnrtwttkhn/bookdown-playground" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="test" />
+  <meta name="twitter:title" content="Bookdown Playground" />
   
   <meta name="twitter:description" content="Experiments with DataLad, R bookdown and Travis CI" />
   
@@ -24,6 +24,7 @@
 <meta name="author" content="Lennart Wittkuhn" />
 
 
+<meta name="date" content="2020-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -129,9 +130,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bookdown Playground</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Superdataset</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#index.rmd"><i class="fa fa-check"></i><b>1.1</b> <code>index.Rmd</code></a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#things-i-learned"><i class="fa fa-check"></i><b>1.2</b> Things I learned:</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="nested-subdataset.html"><a href="nested-subdataset.html"><i class="fa fa-check"></i><b>2</b> Nested subdataset</a>
 <ul>
@@ -146,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">test</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown Playground</a>
           </h1>
         </div>
 
@@ -155,16 +157,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">test</h1>
+<h1 class="title">Bookdown Playground</h1>
 <p class="author"><em>Lennart Wittkuhn</em></p>
-<p class="date"><em>9/16/2020</em></p>
+<p class="date"><em>2020-09-16</em></p>
 </div>
-<div id="bookdown-playground" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Bookdown Playground</h1>
+<div id="superdataset" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Superdataset</h1>
 <p>Welcome to my Bookdown Playground!</p>
 <div id="index.rmd" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> <code>index.Rmd</code></h2>
 <p>This is the content of the <code>index.Rmd</code> file in the root of the repo.</p>
+</div>
+<div id="things-i-learned" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Things I learned:</h2>
+<ol style="list-style-type: decimal">
+<li>You need at least one <code>#</code> main heading</li>
+</ol>
+<ul>
+<li>If you don’t specify one main markdown heading, e.g., in the <code>index.Rmd</code>, the <code>index.Rmd</code> will not be rendered as an <code>index.html</code> which in turn, however, is <em>neeed</em> for your website to properly show up.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Things to consider when adding subdatasets / git submodules</li>
+</ol>
+<ul>
+<li>Good news: Travis CI clones Git submodules by default</li>
+<li>When using subdatasets aka. git submodules you should add <code>options(bookdown.render.file_scope = FALSE);</code> to your <code>Rscript</code> command, e.g., use:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="ex">Rscript</span> -e <span class="st">&quot;options(bookdown.render.file_scope = FALSE); bookdown::render_book(&#39;index.Rmd&#39;, &#39;bookdown::gitbook&#39;)&quot;</span></span></code></pre></div>
+<ul>
+<li>Also, although this is vague advice, don’t add too many nested subdatasets (certainly not the <em>same</em> dataset) do avoid creating a long recursion down into the rabbit hole of submodules.</li>
+</ul>
 
 </div>
 </div>
