@@ -1,0 +1,6 @@
+Package: bookdown-playground
+Type: Book
+Title: Bookdown Playground
+Version: 0.0.1
+Imports: bookdown, ggplot2
+Remotes: lnnrtwttkhn/bookdown-playground
