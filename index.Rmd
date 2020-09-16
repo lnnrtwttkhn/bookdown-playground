@@ -42,7 +42,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Bookdown Playground
+# Superdataset
 
 Welcome to my Bookdown Playground!
 
@@ -50,3 +50,15 @@ Welcome to my Bookdown Playground!
 
 This is the content of the `index.Rmd` file in the root of the repo.
 
+
+## Things I learned:
+
+1. You need at least one `#` main heading
+  - If you don't specify one main markdown heading, e.g., in the `index.Rmd`, the `index.Rmd` will not be rendered as an `index.html` which in turn, however, is *neeed* for your website to properly show up.
+1. Things to consider when adding subdatasets / git submodules
+  - Good news: Travis CI clones Git submodules by default
+  - When using subdatasets aka. git submodules you should add `options(bookdown.render.file_scope = FALSE);` to your `Rscript` command, e.g., use:
+  ```bash
+  Rscript -e "options(bookdown.render.file_scope = FALSE); bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+  ```
+  - Also, although this is vague advice, don't add too many nested subdatasets (certainly not the *same* dataset) do avoid creating a long recursion down into the rabbit hole of submodules.
