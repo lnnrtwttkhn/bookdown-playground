@@ -3,16 +3,46 @@ title: "Bookdown Playground"
 author: "Lennart Wittkuhn"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 link-citations: yes
 github-repo: lnnrtwttkhn/bookdown-playground
 description: "Experiments with DataLad, R bookdown and Travis CI"
+output:
+  bookdown::gitbook:
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        github: yes
+        twitter: yes
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+      info: yes
+      code_folding: "hide"
+
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Bookdown Playground
 
 ## R Markdown
 

@@ -13,6 +13,18 @@ The repo website should be available here: https://lennartwittkuhn.com/bookdown-
 The repo is a DataLad dataset (initialized with `-c text2git`) which is not really crucial because most relevant files are under `git` and not `git-annex` control.
 However, if I later want to work with files under `git-annex` control this aspect might gain more relevance.
 
+## Notes
+
+Interestingly, at least one main heading (in Markdown) using `#` is needed to create an `index.html` which in turn is need to properly display the website.
+
+So, you need to, at least, have something like this in your `index.Rmd`:
+
+```
+# Main heading
+
+Blah blah blah
+```
+
 ## Resources
 
 - [Project website of this repository](https://lennartwittkuhn.com/bookdown-playground/)
